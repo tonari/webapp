@@ -1,0 +1,27 @@
+.container {
+  /* is this initial value neccessary? */
+  --children: 1;
+  /* every container should set translate_x, or else if you have a container in a conainer, then they will both use this var together */
+  --translate_x: 0px;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  width: calc(var(--children)*100%);
+  height: 50vw;
+  max-height: 100vh;
+  transform: translate(calc(var(--translate_x, 0px) + var(--index, 0) / var(--children) * -100%));
+  will-change: transform;
+}
+
+.container>* {
+  width: calc(100%/var(--children));
+  user-select: none;
+}
+
+.release {
+  transition: transform calc(var(--f, 1)*.5s) ease-out;
+}
+
+.click {
+  transition: transform calc(1*.5s) ease-out;
+}

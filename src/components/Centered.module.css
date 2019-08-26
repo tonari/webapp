@@ -1,0 +1,7 @@
+.centered {
+  /* overwrite style of <Typography> for Centered */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

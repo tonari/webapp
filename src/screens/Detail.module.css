@@ -1,0 +1,75 @@
+.stepper {
+  width: 100%;
+  justify-content: space-around !important;
+  background: none !important;
+}
+
+.commentScreen {
+  padding: 27px 30px 5px 30px;
+}
+
+.arrowDown {
+  height: 40px !important;
+  width: auto !important;
+  margin: 0 auto;
+  transform: translateX(-50%);
+}
+
+.allAttributesScreenOutter {
+  padding: 20px;
+  padding-bottom: 12px;
+  height: 100%;
+}
+
+.allAttributesScreenInner {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border-radius: 0px 0px 12px 12px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery {
+  z-index: 10;
+}
+
+.galleryNotFullscreen {
+  height: 27%;
+}
+
+.distance {
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  margin: auto 0 !important;
+}
+
+.detail {
+  border-bottom: 1px solid #DBDBDB;
+  margin: 0 20px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.arrowContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+}
+
+.iconEdit {
+  margin-left: 6px;
+}
+
+.goIcon {
+  transform: rotate(90deg);
+}
+
+/* there are two SVG paths. the last path is the actual icon */
+
+.goIcon>path:last-of-type {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}

@@ -1,0 +1,29 @@
+.main {
+  background: linear-gradient(212.37deg, #E6EDF4 0%, #ACBFD1 100%);
+  height: 100%;
+  width: 100%;
+  /* very similar to columnLayout */
+  display: flex;
+  flex-flow: column;
+}
+
+.blurred {
+  filter: blur(7px);
+}
+
+.presenting {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(2.0);
+  width: 360px;
+  height: 640px;
+}
+
+.stagingMode {
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+  font-size: 12px;
+  color: #eee;
+}

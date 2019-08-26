@@ -1,0 +1,110 @@
+.attribute {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 3px;
+  width: calc(33% - 6px);
+}
+
+.attributeText {
+  width: 100%;
+  display: block;
+  text-align: center;
+  line-height: 1em !important;
+  height: 3em;
+}
+
+.attributeIcon {
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+}
+
+.attributeList {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.attributeDialog {
+  width: 90%;
+  transform: translateX(5%);
+}
+
+.attributeDialogContent {
+  padding-bottom: 0;
+}
+
+.attributeDialogTitle {
+  font-weight: bold !important;
+  font-size: 18px !important;
+  line-height: normal !important;
+  font-style: normal !important;
+}
+
+.attributeDialogOption {
+  border-bottom: 1px solid #DBDBDB;
+  position: relative;
+  height: 3em;
+}
+
+.attributeDialogOptionLast {
+  border-bottom: 0;
+}
+
+.attributeDialogOptionText {
+  position: absolute;
+  left: 0;
+  top: 1em;
+  bottom: 1em;
+}
+
+.inactive {
+  opacity: 0.25;
+}
+
+.blurred {
+  filter: blur(7px);
+}
+
+.okButton {
+  background-color: #C95747 !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+}
+
+.okButtonText {
+  font-weight: bold !important;
+  color: #fff !important;
+}
+
+.dialogContentWrapper {
+  background-color: #C95747 !important;
+}
+
+.dialogContent {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  padding: 15px 9px;
+  border-radius: 0px 0px 12px 12px;
+  /* fix a bug (?) where there is one pixel line in red */
+  margin-top: -1px;
+  /* so that the box-shadow is displayed on the button */
+  position: relative;
+  z-index: 5;
+}
+
+.okButton::before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #fff;
+  z-index: 10;
+}

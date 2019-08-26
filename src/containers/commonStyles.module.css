@@ -1,0 +1,48 @@
+/* Common styles for views */
+
+/* container for a flex layout */
+
+.columnLayout {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+/* each columnLayout has exactly one main column that strechtes its height */
+
+.mainColumn {
+  flex: 2;
+  overflow: hidden;
+}
+
+.icon {
+  fill: #c95747 !important;
+}
+
+.buttonGoSave {
+  background: #C95747 !important;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 12px 12px 0px 0px !important;
+  margin: 0 20px !important;
+}
+
+@media screen and (max-height: 460px) {
+  .buttonGoSave.goButton {
+    display: none;
+  }
+}
+
+.iconGoSave {
+  width: 13px !important;
+  height: 13px !important;
+  fill: #fff !important;
+  margin-right: 7px;
+}
+
+.textGoSave {
+  color: #fff !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  display: inline-block !important;
+  padding: 6px 0;
+}
