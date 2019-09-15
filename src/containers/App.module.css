@@ -16,7 +16,7 @@
   height: 640px;
 }
 
-.stagingMode {
+.overwriteSearchLocation {
   pointer-events: none;
   user-select: none;
   text-align: center;

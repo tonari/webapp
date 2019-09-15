@@ -127,7 +127,7 @@ class Now extends React.Component<WholeProps, {}> {
   facilityGalleryOnChangeIndex = (url: string) => {
     this.backendPictureId = null;
 
-    const backend_prefix = 'https://tonari.app/api/images/'
+    const backend_prefix = api.getBackendUrl() + 'images/';
     if (url.indexOf(backend_prefix) !== -1) {
       this.backendPictureId = url.substr(backend_prefix.length);
     }

@@ -30,11 +30,11 @@ function AddScreen() {
 }
 
 function NowScreen() {
-  if (api.inDebuggingMode()) {
-    // This is the cluster
-    return <Redirect to='now/52.5262074_13.4005893' />;
-  } else {
+  const location = api.getSearchLocation();
+  if (location === null) {
     return <RedirectNowGPS />;
+  } else {
+    return <Redirect to={`now/${location}`} />;
   }
 }
 
@@ -56,7 +56,7 @@ class App extends React.PureComponent<{}, {}> {
 
             {api.inPresentingMode() && <style>{'body { background-color: #666; }'}</style>}
 
-            {api.inStagingMode() && <span className={styles.stagingMode}>Staging mode active</span>}
+            {(api.getSearchLocation() !== null) && <span className={styles.overwriteSearchLocation}>Not searching from your current location</span>}
           </div>
         </Router>
       </React.Fragment >

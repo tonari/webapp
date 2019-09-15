@@ -75,20 +75,13 @@ http {
 
 There are different modes that the webapp can run in:
 
-* The `production` mode uses the production backend.
-* The `staging` mode uses the staging backend. The idea of the staging backend is to have a seperate database that can be polluted during development.
-* The `debugging` mode activates console logs and other debugging utilities (such as a fake Now search from the cluster). Furthermore it also makes use of the staging backend.
+* The `debugging` mode activates console logs and other debugging utilities (such as a fake Now search from the cluster).
 * The `experimental` mode activates work-in-progress features.
 * The `presenting` mode limits the width and height of the website to the size of a phone.
 
-When using the webapp via `yarn start` then the parameter `staging` is implicit.
-When using it via `yarn build` then the parameter `production` is implicit.
-Setting `production` or `staging` explicitly overwrites the implicit behavior.
-The `debugging` mode always overwrites the behavior of both `production` and `staging`.
-
 The order of the parameters doesn't matter.
 
-For example, you can use the URL https://tonari.app/?experimental&staging#/now to activate both the experimental and staging mode.
+For example, you can use the URL https://tonari.app/?experimental&debugging#/now to activate both the experimental and debugging mode.
 
 ## License
 

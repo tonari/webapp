@@ -34,7 +34,7 @@ class Startup extends React.Component<RouteComponentProps<{}>, {}> {
   render() {
     return (
       <div>
-        <div className={styles.logo}><img src='https://tonari.app/logo-round-transparent.svg' /></div>
+        <div className={styles.logo}><img src='/logo-round-transparent.svg' /></div>
         <Typography className={styles.tonari}>TONARI</Typography>
         <div className={styles.menu}>
           {this.MenuButton('now')}

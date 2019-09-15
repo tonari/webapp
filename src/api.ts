@@ -14,6 +14,7 @@ requireEnv([
   'REACT_APP_WHEELMAP_TOKEN',
   'REACT_APP_MAPBOX_TOKEN',
   'REACT_APP_MAPQUEST_TOKEN',
+  'REACT_APP_BACKEND_URL',
 ]);
 
 export interface Position {
@@ -56,10 +57,6 @@ function paramExists(param: string) {
   return new URLSearchParams(window.location.search).get(param) !== null;
 }
 
-function productionBuild() {
-  return process.env.NODE_ENV === 'production';
-}
-
 export function inDebuggingMode(): Boolean {
   return paramExists('debugging');
 }
@@ -72,20 +69,20 @@ export function inPresentingMode(): Boolean {
   return paramExists('presenting');
 }
 
-// the production backend is used iff the staging backend is not used
-export function inStagingMode(): Boolean {
-  const dbg = inDebuggingMode();
-  const prod = productionBuild();
-
-  return dbg || prod && paramExists('staging') || !prod && !paramExists('production');
+export function getSearchLocation(): String | null {
+  if (typeof process.env.REACT_APP_OVERWRITE_SEARCH_LOCATION == 'undefined') {
+    return null;
+  } else {
+    return process.env.REACT_APP_OVERWRITE_SEARCH_LOCATION;
+  }
 }
 
-function getBackendUrl() {
-  if (inStagingMode()) {
-    return 'https://tonari.app/stagingapi/';
-  } else {
-    return 'https://tonari.app/api/';
+export function getBackendUrl(): String {
+  let url = process.env.REACT_APP_BACKEND_URL!;
+  if (url[url.length - 1] != '/') {
+    url += '/';
   }
+  return url;
 }
 
 let caughtBlockedDomainError = false;
