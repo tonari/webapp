@@ -8,7 +8,7 @@ import DirectionsIcon from '@material-ui/icons/DirectionsOutlined';
 import EditIcon from '@material-ui/icons/Edit';
 import classNames from 'classnames';
 
-import { ApiBufferingState, radiusSearch, addComment, pingNotification } from '../redux';
+import { ApiBufferingState, radiusSearch, addComment } from '../redux';
 import AttributeList from '../components/AttributeList';
 import Centered from '../components/Centered';
 import commonStyles from '../containers/commonStyles.module.css';
@@ -38,7 +38,6 @@ type Props = {
   facilities: ApiBufferingState['facilities'],
   radiusSearch: typeof radiusSearch,
   addComment: typeof addComment,
-  pingNotification: typeof pingNotification,
   comments: ApiBufferingState['comments'],
   addresses: ApiBufferingState['addresses'],
 }
@@ -138,8 +137,6 @@ class Go extends React.PureComponent<RouteComponentProps<Match> & Props, State> 
                       <SwipeResistibleLink
                         to={generateMapsUrl(facility.features.coord, facility.features.name || 'Toilet').url}
                         external
-                        // Send a notification after 10 seconds
-                        onClick={(e) => this.props.pingNotification(facility.features.id, 10)}
                       >
                         <DirectionsIcon className={classNames(commonStyles.icon, styles.directionsIcon)} />
                       </SwipeResistibleLink>
@@ -192,7 +189,6 @@ const mapStateToProps = (state: any) => ({
 const mapDispatchToProps = {
   radiusSearch,
   addComment,
-  pingNotification
 };
 
 export default connect<{}, {}, Props>(

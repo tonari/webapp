@@ -200,12 +200,6 @@ export const addComment = (content: string) => {
   }
 }
 
-export const pingNotification = (id: api.Id, delay: number) => {
-  return async (dispatch: any, getState: any) => {
-    await api.pingNotification(id, delay);
-  }
-}
-
 export const updateFacilityData = (id: api.Id, attributes: api.Attributes) => {
   return async (dispatch: any, getState: any) => {
     const { facilities } = <ApiBufferingState>getState().apiBuffering;

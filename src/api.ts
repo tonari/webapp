@@ -14,7 +14,6 @@ requireEnv([
   'REACT_APP_WHEELMAP_TOKEN',
   'REACT_APP_MAPBOX_TOKEN',
   'REACT_APP_MAPQUEST_TOKEN',
-  'REACT_APP_BACKEND_NOTIFICATION_KEY',
 ]);
 
 export interface Position {
@@ -633,21 +632,6 @@ export async function addComment(id: Id, pos: Position, content: string) {
       content,
     })
   });
-}
-
-export async function pingNotification(id: Id, delay: number) {
-  await getPushSubscription()
-    .then((subscription) => {
-      fetch(`${getBackendUrl()}facilities/ping-notification`, {
-        method: 'post',
-        headers: new Headers({ 'Content-Type': 'application/json' }),
-        body: JSON.stringify({
-          id,
-          delay,
-          subscription
-        })
-      });
-    });
 }
 
 export async function updateAttributes(id: Id, pos: Position, attributes: any) {

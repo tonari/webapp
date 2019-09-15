@@ -7,10 +7,6 @@
   flex-flow: column;
 }
 
-.blurred {
-  filter: blur(7px);
-}
-
 .presenting {
   position: absolute !important;
   left: 50%;

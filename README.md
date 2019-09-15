@@ -22,8 +22,6 @@ Acquire tokens for the following APIs:
 * [Mapbox](https://www.mapbox.com/)
 * [MapQuest](https://www.mapquest.com/)
 
-Create the `public.base64` file according to https://github.com/tonari/backend/blob/master/vapid/generate_vapid_signatures.sh
-
 Create a `.env` file in the root directory with the following layout:
 
 ```
@@ -31,10 +29,7 @@ REACT_APP_ACCESSIBILITY_CLOUD_TOKEN=
 REACT_APP_WHEELMAP_TOKEN=
 REACT_APP_MAPBOX_TOKEN=
 REACT_APP_MAPQUEST_TOKEN=
-REACT_APP_BACKEND_NOTIFICATION_KEY=
 ```
-
-**NOTE: `REACT_APP_BACKEND_NOTIFICATION_KEY` has to be stored as a hexadecimal string.**
 
 Then you can start a local server:
 
